@@ -2,6 +2,8 @@ package primeira_api.api_aluno;
 
 // esse cara vai administrar as rotas da nossa api
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,11 +26,6 @@ public class AlunoControlador {
     @GetMapping
     public List<Aluno> buscaTudo(){
        return alunoService.buscarTodosAlunos();
-    }
-
-    @GetMapping("{id}")
-    public Aluno buscarPorId(@PathVariable int id){
-        return alunoService.buscaAlunoID(id);
     }
 
 }
