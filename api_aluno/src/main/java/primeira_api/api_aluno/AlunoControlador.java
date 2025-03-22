@@ -16,14 +16,15 @@ public class AlunoControlador {
 
     public AlunoControlador(AlunoService alunoService) {
         this.alunoService = alunoService;
+
     }
 
-    @PostMapping
+    @PostMapping("/cadastrar")
     public void cadastrar(@RequestBody Aluno aluno){
         alunoService.cadastrar(aluno); //aqui ele vai solicitar o acesso ao service e o service solicita para o repositorio
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public List<Aluno> buscaTudo(){
        return alunoService.buscarTodosAlunos();
     }

@@ -10,16 +10,14 @@ import java.util.List;
 public class AlunoControlador {
     private List<Aluno> alunos = new ArrayList<>(); // vamos usar uma lista para guardar os alunos
 
-    // POST é o comando especial para adicionar um aluno na nossa api
-    @PostMapping
+    @PostMapping("/cadastrar")
     public void adicionarAluno(@RequestBody Aluno aluno) {
-        alunos.add(aluno); // aqui estamos adicionando o aluno na lista que criamos acima
+        alunos.add(aluno);
     }
 
-    // GET é o nosso comando especial para listar todos os alunos da nossa lista
-    @GetMapping
+    @GetMapping("/listar")
     public List<Aluno> listarAlunos() {
-        return alunos; // retorna a lista de alunos
+        return alunos;
     }
 }
 

@@ -19,8 +19,8 @@ public class AlunoService {
     }
 
     public void cadastrar(Aluno aluno){
+        aluno.setMedia((aluno.getN1() + aluno.getN2()) / 2);
         alunoRepositorio.save(aluno);//aqui ele vai salvar esse aluno no banco de dados
-
     }
     public List<Aluno> buscarTodosAlunos(){
         return alunoRepositorio.findAll();
